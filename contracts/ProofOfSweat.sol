@@ -4,7 +4,7 @@ pragma solidity ^0.8.24;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract ProofOfSweat is ERC721URISTORAGE, Ownable {
+contract ProofOfSweat is ERC721URIStorage, Ownable {
     unit256 public tokenCounter;
 
     constructor() ERC721("ProofOfSweat", "POS") {
