@@ -1,16 +1,21 @@
 {
   "pages": {
-    "/mintpage/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/mintpage/page.css",
-      "static/chunks/app/mintpage/page.js"
+      "static/chunks/app/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
+    ],
+    "/mintpage/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/mintpage/page.css",
+      "static/chunks/app/mintpage/page.js"
     ]
   }
 }

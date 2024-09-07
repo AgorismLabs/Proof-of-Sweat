@@ -3,69 +3,20 @@
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ethers, BrowserProvider, AbiCoder } from "ethers";
 
 const Mint = () => {
-  const [inputData, setInputData] = useState<number>();
+  const [inputData, setInputData] = useState<string>("");
   const [minted, setMinted] = useState<boolean>(false);
   const [walletAddress, setWalletAddress] = useState<string>("");
-  const [nftSent, setNftSent] = useState<boolean>(false);
-  const [isProcessing, setIsProcessing] = useState<boolean>(false); // New state to track processing
+  const [nftSent, setNftSent] = useState<boolean>(false); // when nft is sent it will replace the input and button with the text "nft sent"
 
-  const CONTRACT_ADDRESS = "0xD30C778F7Fd47CCfB93Caa589195eb288FC768c8";
-  const provider = new BrowserProvider(window.ethereum);
-  const signer = provider.getSigner();
-
-  const requestAccount = async () => {
-    try {
-      await window.ethereum.request({ method: "eth_requestAccounts" });
-    } catch (error) {
-      console.error("User rejected the request or there was an error", error);
-      toast.error("Please authorize the application to access your account.");
-    }
-  };
-
-  // Call this function when you need to request access
-  requestAccount();
-  const handleMintNFT = async () => {
+  const handleMintNFT = () => {
     if (!inputData) {
       toast.error("Please enter the text!");
       return;
     }
-
-    try {
-      setIsProcessing(true); // Set processing state to true
-      // Encrypt the private data
-      const abiCoder = new AbiCoder();
-      const encryptedData = abiCoder.encode(["uint256"], [inputData]);
-
-      // Encode the function call
-      const iface = new ethers.Interface([
-        "function mint(address to, uint256 tokenId, bytes calldata privateData)",
-      ]);
-      const data = iface.encodeFunctionData("mint", [
-        await (await signer).getAddress(),
-        1,
-        encryptedData,
-      ]);
-
-      // Send the transaction
-      const tx = await (
-        await signer
-      ).sendTransaction({
-        to: CONTRACT_ADDRESS,
-        data: data,
-      });
-      console.log(`Transaction Hash: ${tx.hash}`);
-      await tx.wait();
-      setMinted(true);
-      toast.success("NFT minted successfully");
-    } catch (error) {
-      console.error(error);
-      toast.error("Error minting NFT");
-    } finally {
-      setIsProcessing(false); // Reset processing state
-    }
+    setMinted(true);
+    toast.success("NFT minted successfully");
   };
 
   const handleSendNFT = () => {
@@ -89,17 +40,13 @@ const Mint = () => {
         Mint <span className="text-gradient">NFT</span>
       </h1>
       <div className="bg-gradient-to-b from-gray-900 to-black p-40 rounded-lg shadow-2xl flex flex-col items-center">
-        {isProcessing ? ( // Show loading state if processing
-          <div className="text-lg font-semibold text-yellow-500">
-            Processing NFT minting...
-          </div>
-        ) : !minted ? (
+        {!minted ? (
           <>
             <input
               type="text"
               placeholder="Enter text here"
               value={inputData}
-              onChange={(e) => setInputData(Number(e.target.value))}
+              onChange={(e) => setInputData(e.target.value)}
               className="w-full px-10 py-3 rounded-md bg-gray-800 bg-opacity-40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 mb-5 text-lg "
             />
 
