@@ -10,8 +10,6 @@ import { useAccount } from "wagmi";
 const Mint = () => {
   const [workoutType, setWorkoutType] = useState<string>("");
   const [minted, setMinted] = useState<boolean>(false);
-  const [walletAddress, setWalletAddress] = useState<string>("");
-  const [nftSent, setNftSent] = useState<boolean>(false); // when NFT is sent, it will replace the input and button with the text "NFT sent"
   const { isConnected } = useAccount(); // to track wallet connection status
 
   const contractAddress = "0xEf164085E4552dEf095284F77d9eE5aFf95671D2";
@@ -60,17 +58,7 @@ const Mint = () => {
     }
   };
 
-  const handleSendNFT = () => {
-    if (!walletAddress) {
-      toast.error("Please enter a wallet address!");
-      return;
-    }
-
-    // Logic to send the NFT to the entered wallet address (custom logic needed)
-    setNftSent(true); // Set state to show success message
-    toast.success("NFT sent to wallet address!");
-  };
-
+ 
   return (
     <div className="bg-gradient-to-r from-black via-gray-900 to-gray-800 flex flex-col items-center justify-center min-h-screen text-white">
       <ToastContainer />
@@ -106,25 +94,9 @@ const Mint = () => {
               </div>
             </div>
           </>
-        ) : !nftSent ? (
-          <>
-            <input
-              type="text"
-              placeholder="Enter wallet address"
-              value={walletAddress}
-              onChange={(e) => setWalletAddress(e.target.value)}
-              className="w-full px-10 py-3 rounded-md bg-gray-800 bg-opacity-40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 mb-5 text-lg"
-            />
-            <button
-              onClick={handleSendNFT}
-              className="w-full py-3 text-lg font-semibold bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 rounded-md shadow-md transition duration-300"
-            >
-              Send NFT
-            </button>
-          </>
-        ) : (
+        )  : (
           <div className="text-lg font-semibold text-green-500">
-            NFT sent to the wallet address!
+            NFT sent to the wallet address, check your wallet or opensea!
           </div>
         )}
       </div>
