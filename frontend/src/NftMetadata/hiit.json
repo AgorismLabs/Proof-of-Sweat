@@ -1,0 +1,12 @@
+{
+    "attributes" : [ {
+      "trait_type" : "Breed",
+      "value" : "Maltipoo"
+    }, {
+      "trait_type" : "Eye color",
+      "value" : "Mocha"
+    } ],
+    "description" : "workout timing: 3pm-4pm",
+    "image" : "https://gateway.pinata.cloud/ipfs/QmSy9aRmF3kUvNJTfNR6pdth9uSpMzSaiZR1GfuH6eu6Un",
+    "name" : "ighmaz"
+}

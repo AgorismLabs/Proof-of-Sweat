@@ -16,8 +16,9 @@ const Mint = () => {
   const workoutOptions = {
     Weightlifting:
       "https://gateway.pinata.cloud/ipfs/QmepHe3TSXKw2LA9WnBaE9PpfSVEXLMB9jXG5Ang7f8zWJ",
-    Cardio: "ipfs://Qm.../cardio.png",
-    HIIT: "ipfs://Qm.../hiit.png",
+    Cardio: "https://gateway.pinata.cloud/ipfs/QmX9dJMzwgpD7WZCgmLprXki2aPTEEXEYz4E3QBnFTR3Sy",
+    HIIT: "https://gateway.pinata.cloud/ipfs/QmPncNeJeHTjuCAaozmgYFXEXqJeQ5G57F4tcnApgDwBfT",
+   
   };
 
   // Mint NFT function

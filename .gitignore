@@ -25,6 +25,7 @@ package-lock.json
 yarn.lock
 node_modules
 .env
+.next
 
 # Hardhat files
 /cache
