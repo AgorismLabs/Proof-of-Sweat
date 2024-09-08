@@ -1,6 +1,6 @@
 # Proof of Sweat - NFT Gym Pass
 
-## Overview![Screenshot 2024-09-08 at 6 50 56 PM](https://github.com/user-attachments/assets/113140e6-8c91-438e-9256-6ff63d791b12)
+![Screenshot 2024-09-08 at 6 50 56 PM](https://github.com/user-attachments/assets/113140e6-8c91-438e-9256-6ff63d791b12)
 ![Screenshot 2024-09-08 at 6 51 07 PM](https://github.com/user-attachments/assets/814fb3ee-2108-48d5-afa9-4da4566791ad)
 ![Screenshot 2024-09-08 at 6 51 21 PM](https://github.com/user-attachments/assets/94d4354c-a736-4b14-9cb4-d4dc6c9a18fe)
 
