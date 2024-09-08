@@ -13,7 +13,7 @@ const Mint = () => {
   const { isConnected } = useAccount(); // to track wallet connection status
 
   const contractAddress = "0xEf164085E4552dEf095284F77d9eE5aFf95671D2";
-  const workoutOptions = {
+  const workoutOptions:any = {
     Weightlifting:
       "https://gateway.pinata.cloud/ipfs/QmepHe3TSXKw2LA9WnBaE9PpfSVEXLMB9jXG5Ang7f8zWJ",
     Cardio: "https://gateway.pinata.cloud/ipfs/QmX9dJMzwgpD7WZCgmLprXki2aPTEEXEYz4E3QBnFTR3Sy",
@@ -44,7 +44,8 @@ const Mint = () => {
         signer
       );
 
-      const tokenURI ="https://gateway.pinata.cloud/ipfs/QmepHe3TSXKw2LA9WnBaE9PpfSVEXLMB9jXG5Ang7f8zWJ"
+      // const tokenURI ="https://gateway.pinata.cloud/ipfs/QmepHe3TSXKw2LA9WnBaE9PpfSVEXLMB9jXG5Ang7f8zWJ"
+      const tokenURI = workoutOptions[workoutType];
       const nftTxn = await myNftContract.mintBadge(await signer.getAddress(), tokenURI);
       await nftTxn.wait();
 
@@ -100,7 +101,7 @@ const Mint = () => {
           </>
         )  : (
           <div className="text-lg font-semibold text-green-500">
-            NFT sent to the wallet address, check your wallet or opensea!
+           NFT Minted! Now import it on ur wallet or check on opensea
           </div>
         )}
       </div>
