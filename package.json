@@ -30,6 +30,8 @@
   "dependencies": {
     "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@openzeppelin/contracts": "^5.0.2",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "react-loader-spinner": "^6.1.6",
+    "react-spinner": "^0.2.7"
   }
 }
