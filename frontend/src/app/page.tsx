@@ -15,7 +15,7 @@ export default function Home() {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-black via-gray-900 to-gray-800">
       <div className="bg-gradient-to-b from-gray-900 to-black  px-20 py-20 rounded-2xl shadow-2xl">
         <h1 className="text-5xl font-extrabold text-white mb-8 text-center tracking-widest">
-          Agorism Lab
+          Proof Of Sweat 
         </h1>
         <div className="flex justify-center mb-6">
           <w3m-button />

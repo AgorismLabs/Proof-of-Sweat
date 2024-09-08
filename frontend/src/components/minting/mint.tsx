@@ -69,18 +69,21 @@ const Mint = () => {
       <div className="bg-gradient-to-b from-gray-900 to-black p-40 rounded-lg shadow-2xl flex flex-col items-center">
         {!minted ? (
           <>
-            <select
-              value={workoutType}
-              onChange={(e) => setWorkoutType(e.target.value)}
-              className="mb-5 text-black"
-            >
-              <option value="">Select Workout</option>
-              {Object.keys(workoutOptions).map((workout) => (
-                <option key={workout} value={workout}>
-                  {workout}
-                </option>
-              ))}
-            </select>
+          <select
+  value={workoutType}
+  onChange={(e) => setWorkoutType(e.target.value)}
+  className="mb-5 w-full px-4 py-2 text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 
+             rounded-lg  focus:border-purple-300 focus:ring-2 focus:ring-purple-300 
+             transition-all duration-300 shadow-lg focus:outline-none"
+>
+  <option value="" className="text-gray-300">Select Workout</option>
+  {Object.keys(workoutOptions).map((workout) => (
+    <option key={workout} value={workout} className="text-black">
+      {workout}
+    </option>
+  ))}
+</select>
+
 
             <div className="flex justify-center mt-10">
               <div className="relative inline-flex group">
