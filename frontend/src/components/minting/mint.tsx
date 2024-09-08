@@ -68,6 +68,11 @@ const Mint = () => {
       <div className="bg-gradient-to-b from-gray-900 to-black p-40 rounded-lg shadow-2xl flex flex-col items-center">
         {!minted ? (
           <>
+             <input
+              type="text"
+              placeholder="Enter Your Name"
+              className="mb-5 w-full px-4 py-2 text-white bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none transition-all duration-300"
+            />
             <select
               value={workoutType}
               onChange={(e) => setWorkoutType(e.target.value)}

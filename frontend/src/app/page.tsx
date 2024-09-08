@@ -1,5 +1,6 @@
 "use client";
 
+import Navbar from "@/components/minting/Navbar";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -12,6 +13,8 @@ export default function Home() {
   const router = useRouter();
 
   return (
+<div>
+<Navbar/>
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-black via-gray-900 to-gray-800">
       <div className="bg-gradient-to-b from-gray-900 to-black  px-20 py-20 rounded-2xl shadow-2xl">
         <h1 className="text-5xl font-extrabold text-white mb-8 text-center tracking-widest">
@@ -49,5 +52,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+</div>
+
   );
 }
