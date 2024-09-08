@@ -23,23 +23,29 @@
 
 ## Tech Stack
 
-- **Frontend:** Next.js, TailwindCSS
+- **Frontend:** Next.js, TailwindCSS, Typescript, reactquery
 - **Smart Contract:** Solidity, ERC-721
-- **Blockchain Interaction:** ethers.js, MetaMask
+- **Blockchain Interaction:** ethers.js, MetaMask,wagmi,web3modal
 - **Storage:** IPFS
 - **Network:** Ethereum Sepolia Testnet
 
-## Smart Contract Details
+## How It Works
 
-The ERC-721 smart contract was built using **Solidity** and deployed on the Ethereum Sepolia testnet. It handles the minting process for the Gym Badge NFTs and ensures that each NFT is:
+1. **Connect Your MetaMask Wallet**
 
-- Unique to the user's chosen workout type.
-- Securely stored on-chain without the need for a traditional backend.
+   Launch the app and connect your MetaMask wallet. Make sure you are connected to the Ethereum Sepolia testnet.
 
-### Contract Functions
+2. **Select Workout Type**
 
-- **mintGymBadge:** Mints a new NFT badge based on the user's selected workout (weightlifting, cardio, yoga, etc.).
-- **viewNFT:** Allows users to view their minted NFTs on platforms like **OpenSea**.
+   Choose the type of workout you are interested in, such as weightlifting, cardio, or yoga.
+
+3. **Mint Your NFT**
+
+   Mint a personalized Gym Badge NFT by submitting your workout choice. This creates a unique NFT representing your fitness activity.
+
+4. **View and Manage NFTs**
+
+   After minting, view your NFT in your MetaMask wallet or on NFT platforms like OpenSea. You can also transfer or gift your NFTs to others through MetaMask.
 
 
 
